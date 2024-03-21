@@ -6,7 +6,9 @@
     padding: 20px;
     font-family: Arial, sans-serif;
     height: 100%;
-    width: 100%;
+    width: 600px;
+    border: 2px solid #3750f1;
+    border-radius: 5px;
     
 }
 
@@ -15,24 +17,51 @@
     color: #333;
 }
 
-.product {
+
+
+.signup {
     display: flex;
     flex-direction: column;
-    width: 300px;
-    padding: 20px;
+    width: 600px;
+    padding: 20px 0;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+.name{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 95%;
+    align-self: center;
+
+}
+
+
+.name input {
+    margin: 0px;
+    align-self: center;
+    width: 40%;
+}
+
 .inputBox {
-    width: 100%;
+    width: 80%;
     padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
+    margin: 10px ;
+    border: 2px solid #3750f1;
     border-radius: 5px;
     font-size: 16px;
-    background-color: wheat;
+    background-color: white;
+    color: black;
+    align-self: center;
 }
+
+.inputBox::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: blueviolet;
+    opacity: 1; /* Firefox */
+}
+
+
 
 .appButton {
     width: 100%;
