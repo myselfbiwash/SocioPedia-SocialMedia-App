@@ -61,10 +61,10 @@ const SignUp = () => {
     setPicture(e.target.files[0]);
   };
   return (
-    <div className="register">
-      <h1>Register</h1>
+    <div className="register-login">
+      <h1>Sociopedia</h1>
       <form
-        className="signup"
+        className="signup-login"
         onSubmit={collectData}
         encType="multipart/form-data"
       >
