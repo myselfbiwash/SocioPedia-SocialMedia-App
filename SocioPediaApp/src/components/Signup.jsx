@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Entry.css";
 
 const SignUp = () => {
@@ -124,6 +124,7 @@ const SignUp = () => {
           Sign Up
         </button>
       </form>
+  <p style={{color:"black"}}>Already signed up? Click here to <Link to="/login"><span style={{color:"blue"}}>login</span></Link> </p>
     </div>
   );
 };
