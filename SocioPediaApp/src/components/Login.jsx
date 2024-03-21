@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import "./Signup.css";
+import "./Entry.css";
 
 const Login =()=>{
     const [email,setEmail] = React.useState('');
@@ -14,7 +14,7 @@ const Login =()=>{
     }, [])
 
     const handleLogin= async()=>{
-        let result = await fetch('api/login', {
+        let result = await fetch('http://localhost:4000/auth/login', {
             method: 'post',
             body: JSON.stringify({ email, password}),
             headers: {
@@ -23,9 +23,9 @@ const Login =()=>{
         });
         result = await result.json();
         console.log("Login Result:",result);
-        if(result.auth){
+        if(result.token){
             localStorage.setItem("user", JSON.stringify(result.user));
-            localStorage.setItem("token", JSON.stringify(result.auth));
+            localStorage.setItem("token", JSON.stringify(result.token));
 
             navigate("/");
         }
