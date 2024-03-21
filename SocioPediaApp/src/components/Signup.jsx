@@ -64,11 +64,11 @@ const SignUp = () => {
     <div className="register">
       <h1>Register</h1>
       <form
-        className="product"
+        className="signup"
         onSubmit={collectData}
         encType="multipart/form-data"
       >
-        <div>
+        <div className="name">
           {" "}
           <input
             className="inputBox"
