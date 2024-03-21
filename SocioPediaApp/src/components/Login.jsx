@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link,  useNavigate } from "react-router-dom";
 import "./Entry.css";
 
 const Login =()=>{
@@ -40,6 +40,8 @@ const Login =()=>{
             <button onClick={handleLogin} className="appButton" type="button">Login</button>
 
         </div>
+        <p style={{color:"black"}}>Not signed up yet? Click here to <Link to="/signup"><span style={{color:"blue"}}>signup</span></Link> </p>
+
         </div>
     )
 
