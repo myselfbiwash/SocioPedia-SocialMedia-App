@@ -1,17 +1,22 @@
-import React, { useEffect } from "react";
+import React, { useEffect,useState } from "react";
 import { Link,  useNavigate } from "react-router-dom";
 import "./Entry.css";
+import { useDispatch, useSelector } from 'react-redux';
+import { login } from './state/reducer'; // import the login action
 
 const Login =()=>{
-    const [email,setEmail] = React.useState('');
-    const [password,setPassword] = React.useState('');
+    const [email,setEmail] = useState('');
+    const [password,setPassword] = useState('');
     const navigate = useNavigate();
-    useEffect(()=> {
-        const auth = localStorage.getItem('user');
-        if (auth) {
-            navigate("/")
-        }
-    }, [])
+    const dispatch = useDispatch(); // initialize useDispatch
+
+    const user = useSelector(state => state.auth.user);
+
+    useEffect(() => {
+      if (user) {
+        navigate("/");
+      }
+    }, [user]);
 
     const handleLogin= async()=>{
         let result = await fetch('http://localhost:4000/auth/login', {
@@ -24,8 +29,11 @@ const Login =()=>{
         result = await result.json();
         console.log("Login Result:",result);
         if(result.token){
-            localStorage.setItem("user", JSON.stringify(result.user));
-            localStorage.setItem("token", JSON.stringify(result.token));
+            // localStorage.setItem("user", JSON.stringify(result.user));
+            // localStorage.setItem("token", JSON.stringify(result.token));
+
+            dispatch(login({ user: result.user, token: result.token })); // dispatch the login action
+
 
             navigate("/");
         }
