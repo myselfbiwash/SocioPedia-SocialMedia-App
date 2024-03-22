@@ -6,7 +6,7 @@ import { Link, useNavigate } from 'react-router-dom'
 
 
 const Navbar = () => {
-
+    const auth = localStorage.getItem('user');
     const navigate = useNavigate();
 
     const logout = () => {
@@ -22,7 +22,9 @@ const Navbar = () => {
     
 
   return (
-    <nav className='navbar'>
+    <nav>
+        {auth ? 
+    (<div className='navbar'>
         <div className='nav-first'>
             <h1 style={{color:'lightseagreen'}}>Sociopedia</h1>
             <input type="text" placeholder="Search" />
@@ -39,6 +41,7 @@ const Navbar = () => {
         </select>
         </div>
        
+    </div>) :<p>This is logged out state.</p>}
     </nav>
   )
 }
