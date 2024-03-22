@@ -77,3 +77,8 @@ ul li{
     text-align: center;
     background-color: #F6F6F6;
 }
+
+.loggedout{
+    display:block;
+    text-align: center;
+}
