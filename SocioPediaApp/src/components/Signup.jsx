@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Entry.css";
+import { useDispatch, useSelector } from "react-redux";
+import { login } from "./state/reducer"; // import the login action
 
 const SignUp = () => {
   const [firstName, setFirstName] = useState("");
@@ -13,12 +15,15 @@ const SignUp = () => {
 
   const navigate = useNavigate();
 
+  const dispatch = useDispatch(); // initialize useDispatch
+
+  const user = useSelector(state => state.auth.user);
   useEffect(() => {
-    const auth = localStorage.getItem("user");
-    if (auth) {
+
+    if (user) {
       navigate("/");
     }
-  });
+  },[user]);
 
   const collectData = async (event) => {
     event.preventDefault();
@@ -44,14 +49,18 @@ const SignUp = () => {
       result = await result.json();
       console.log("SignUp Result:", result);
 
-      if (result.savedUser) {
-        localStorage.setItem("user", JSON.stringify(result.savedUser));
+      if (result.user) {
+        //localStorage.setItem("user", JSON.stringify(result.savedUser));
         // localStorage.setItem("token", JSON.stringify(result.auth));
+
+        dispatch(login({ user: result.user, token: result.token })); // dispatch the login action
+        navigate("/");
+
       }
 
-      if (result) {
-        navigate("/");
-      }
+      // if (result) {
+      //   navigate("/");
+      // }
     } catch (err) {
       console.log(err);
     }
