@@ -16,7 +16,6 @@ function App() {
      {/* <Route path="/" element={<Navbar />} /> */}
       <Router>
       <Navbar />
-
         <Routes>
         <Route path="/" element={<PrivateComponent />}>
           <Route path="/" element={<Homepage />} />
