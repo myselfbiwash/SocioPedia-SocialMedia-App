@@ -1,11 +1,15 @@
 import React from 'react'
+import Navbar from './Navbar'
 
 const Homepage = () => {
   return (
-    <div style={{textAlign: 'center', color:'green'}}>
-      This is homepage!
+    <div >
+    {/* <Navbar /> */}
+    <h1 >Welcome to Sociopedia</h1>
+    
     </div>
   )
 }
 
 export default Homepage
+
