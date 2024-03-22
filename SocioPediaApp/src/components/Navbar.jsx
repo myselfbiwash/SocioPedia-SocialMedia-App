@@ -41,7 +41,7 @@ const Navbar = () => {
         </select>
         </div>
        
-    </div>) :<p>This is logged out state.</p>}
+    </div>) :<span className='loggedout'>Enter from here</span>}
     </nav>
   )
 }
