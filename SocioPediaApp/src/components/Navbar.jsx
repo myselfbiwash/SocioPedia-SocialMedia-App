@@ -1,21 +1,27 @@
 import React from 'react'
 import './navbar.css'
 import { Link, useNavigate } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux';
+import { logout } from './state/reducer'; // import the login action
+
+
 
 
 
 
 const Navbar = () => {
-    const auth = localStorage.getItem('user');
-    const navigate = useNavigate();
+  const auth = useSelector(state => state.auth.user);
+  const navigate = useNavigate();
+  const dispatch = useDispatch(); // initialize useDispatch
 
-    const logout = () => {
-        localStorage.clear();
-        navigate('/login');
+
+    const handleLogout = () => {
+        dispatch(logout());
+navigate('/login');
     }
     function handleChange(e){
         if(e.target.value === 'logout'){
-          logout();
+          handleLogout();
         }
       }
     
