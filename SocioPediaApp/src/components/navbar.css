@@ -31,11 +31,45 @@ ul li{
     margin-right: 20px;
 }
 
+/* .search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 60%;
+    margin: 0 auto;
+    padding: 0 20px;
+    background-color: #F6F6F6;
+    border-radius: 5px;
+    border: 1px solid #F6F6F6;
+    align-self: center;
+    margin: 10px;
+    padding: 0 10px;
+    background-color: #F6F6F6; 
+} */
+
+.search-container {
+    position: relative; 
+    display: inline-block; 
+}
+
+input[type="text"] {
+    padding-right: 20px; /* add padding to the right of the input to make room for the icon */
+}
+
+.search-icon {
+    position: absolute;
+    right: 25px; /* positions the icon 25px from the right edge of the .search-container. */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
 .nav-first input{
     width: 200px;
-    height: 30px;
+    height: 40px;
     border-radius: 5px;
-    border: 1px solid blue;
+    border: 1px solid #F6F6F6;
     align-self: center;
     margin: 10px;
     padding: 0 10px;
@@ -78,7 +112,3 @@ ul li{
     background-color: #F6F6F6;
 }
 
-.loggedout{
-    display:block;
-    text-align: center;
-}
