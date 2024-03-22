@@ -1,13 +1,22 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
+import { store, persistor } from './components/state/store'; // import your store and persistor
+import App from './App';
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+const root = document.getElementById('root');
+const appRoot = ReactDOM.createRoot(root);
+
+appRoot.render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <App />
+      </PersistGate>
+    </Provider>
+  </React.StrictMode>
+);
 
 // ReactDOM.createRoot(document.getElementById('root')): This line is using the createRoot method from the ReactDOM library to create a root React 
 // component attached to the HTML element with the id 'root'. This is typically a <div> element in your HTML file.
