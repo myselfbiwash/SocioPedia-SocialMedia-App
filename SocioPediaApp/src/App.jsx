@@ -14,8 +14,9 @@ function App() {
     <>
      {/* <p>Hello Social Animals</p> */}
      {/* <Route path="/" element={<Navbar />} /> */}
-     <Navbar />
       <Router>
+      <Navbar />
+
         <Routes>
         <Route path="/" element={<PrivateComponent />}>
           <Route path="/" element={<Homepage />} />
