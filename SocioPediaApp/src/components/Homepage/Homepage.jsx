@@ -1,6 +1,8 @@
 import React from 'react'
 import UserWidget from '../widgets/UserWidget'
 import { useSelector } from 'react-redux'
+import MyPostWidget from '../widgets/MyPostWidget';
+import './Homepage.css'
 
 const Homepage = () => {
   const user = useSelector((state) => state.auth.user);
@@ -17,9 +19,12 @@ const Homepage = () => {
  
 
   return (
-    <div >
+    <div className='homepage'>
       <section className='user-details'>
         <UserWidget userId={_id} picturePath={picturePath} />
+      </section>
+      <section className='user-posts'>
+        <MyPostWidget picturePath={picturePath}/>
       </section>
     
     </div>
