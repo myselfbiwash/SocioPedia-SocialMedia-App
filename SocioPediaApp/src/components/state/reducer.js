@@ -12,10 +12,13 @@ const authSlice = createSlice({
         state.user = null;
         state.token = null;
       },
+      setPosts: (state, action) => {
+        state.posts = action.payload.posts;
+      },
     // add other reducers like logout here
   },
 });
 
-export const { login,logout } = authSlice.actions;
+export const { login,logout,setPosts } = authSlice.actions;
 
 export default authSlice.reducer;
