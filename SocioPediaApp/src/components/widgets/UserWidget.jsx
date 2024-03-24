@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import UserImage from "../UserImage";
 import "./Widget.css";
+import twitterImage from "../../assets/twitter.png";
+import linkedinImage from "../../assets/linkedin.png";
 
 const UserWidget = ({ userId, picturePath }) => {
   const [user, setUser] = useState(null);
@@ -86,6 +88,27 @@ const UserWidget = ({ userId, picturePath }) => {
         </div>
         </div>
         <hr />
+        <div className="fourth-row">
+          <span><b>Social Profiles</b></span>
+          <a href="https://www.twitter.com" target="_blank" rel="noreferrer">
+          <div className="twitter">
+            <img src={twitterImage} alt="twitter" />
+            <div className="twitter-text">
+              <span><b>Twitter</b></span>
+              <span>Social Network</span>
+            </div>
+          </div>
+          </a>
+          <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">
+          <div className="linkedin">
+            <img src={linkedinImage} alt="linkedin" />
+            <div className="linkedin-text">
+              <span><b>LinkedIn</b></span>
+              <span>Network Platform</span>
+            </div>
+          </div>
+          </a>
+        </div>
     </div>
   );
 };

@@ -85,3 +85,28 @@
     margin-left: 40px;
 }
 
+.fourth-row{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-left: 30px;
+    margin-top: 20px;
+    gap:8px;
+}
+
+.twitter, .linkedin{
+    display:flex;
+    gap: 15px;
+    align-items: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 13px;
+
+}
+
+.twitter-text, .linkedin-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 5px;
+}
+
