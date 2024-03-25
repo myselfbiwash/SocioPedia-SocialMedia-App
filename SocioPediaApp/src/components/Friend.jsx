@@ -10,13 +10,26 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
     const navigate = useNavigate();
     const { _id } = useSelector((state) => state.auth.user);
     const token = useSelector((state) => state.auth.token);
-    const friends = useSelector((state) => state.auth.user.friends);
+    // const friends = useSelector((state) => state.auth.user.friends);
+    const user = useSelector((state) => state.auth.user);
+    // console.log("User id from store is:", _id);
+    // console.log("User from store is:", user);
+const friends = user ? user.friends : [];
+// console.log("Friends are:", friends);
 
     // const isFriend = friends.find((friend) => friend._id === friendId);
+    let isFriend = false;
+// if (friends && Array.isArray(friends)) {
+//     isFriend = friends.find((friend) => friend._id === friendId);
+// }
 
     const patchFriend = async () => {
+        if (!friendId) {
+            console.error('friendId is undefined');
+            return;
+        }
         const response = await fetch(
-          `http://localhost:3001/users/${_id}/${friendId}`,
+          `http://localhost:4000/users/${_id}/${friendId}`,
           {
             method: "PATCH",
             headers: {
@@ -26,6 +39,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
           }
         );
         const data = await response.json();
+         console.log("Friends are:", data);
         dispatch(setFriends({ friends: data }));
       };
 
@@ -40,11 +54,11 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
     </div>
     <div>
         
-      {/* {isFriend ? (
+      {isFriend ? (
         <button onClick={patchFriend}>Unfriend</button>
       ) : (
         <button onClick={patchFriend}>Add Friend</button>
-      )} */}
+      )}
     </div>
     </div>
   )
