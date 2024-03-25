@@ -28,6 +28,7 @@ const PostsWidget = ({ userId, isProfile = false }) => {
       }
     );
     const data = await response.json();
+    console.log("User Posts are:", data);
     dispatch(setPosts({ posts: data }));
   };
 
