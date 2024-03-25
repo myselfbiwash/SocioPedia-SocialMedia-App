@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import UserImage from "./UserImage";
+import UserImage from "../../components/UserImage";
 import "./Widget.css";
 import twitterImage from "../../assets/twitter.png";
 import linkedinImage from "../../assets/linkedin.png";
