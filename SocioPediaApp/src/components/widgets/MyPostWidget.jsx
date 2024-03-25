@@ -2,12 +2,11 @@ import React from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setPosts } from "../state/reducer";
-import UserImage from "./UserImage";
+import UserImage from "../../components/UserImage";
 import Dropzone from "react-dropzone";
 
 const MyPostWidget = ({ picturePath }) => {
   const dispatch = useDispatch();
-  const [isImage, setIsImage] = useState(false);
   const [image, setImage] = useState(null);
   const [post, setPost] = useState("");
   const { _id } = useSelector((state) => state.auth.user);
@@ -28,6 +27,7 @@ const MyPostWidget = ({ picturePath }) => {
       body: formData,
     });
     const posts = await response.json();
+    console.log("Posts are:", posts);
     dispatch(setPosts({ posts }));
     setImage(null);
     setPost("");
