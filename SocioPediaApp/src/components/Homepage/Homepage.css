@@ -2,3 +2,10 @@
     display: flex;
     
 }
+
+.user-posts{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 700px;
+}
