@@ -1,0 +1,17 @@
+.post-friend{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+}
+
+.post-desc h3{
+    margin:0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.post-desc span{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+    color: gray;
+}
