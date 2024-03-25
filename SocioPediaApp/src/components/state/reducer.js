@@ -15,10 +15,25 @@ const authSlice = createSlice({
       setPosts: (state, action) => {
         state.posts = action.payload.posts;
       },
+      setPost: (state, action) => {
+        const updatedPosts = state.posts.map((post) => {
+          if (post._id === action.payload.post._id) return action.payload.post;
+          return post;
+        });
+        state.posts = updatedPosts;
+      },
+
+      setFriends: (state, action) => {
+        if (state.user) {
+          state.user.friends = action.payload.friends;
+        } else {
+          console.error("user friends non-existent :(");
+        }
+      },
     // add other reducers like logout here
   },
 });
 
-export const { login,logout,setPosts } = authSlice.actions;
+export const { login,logout,setPosts,setFriends, setPost } = authSlice.actions;
 
 export default authSlice.reducer;
