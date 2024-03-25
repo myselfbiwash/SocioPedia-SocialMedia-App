@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { setFriends } from "./state/reducer";
 import UserImage from "./UserImage";
+import './Friend.css';
 
 const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
     const dispatch = useDispatch();
@@ -30,9 +31,9 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
 
   return (
     <div>
-      <div>
+      <div className='post-friend'>
       <UserImage image={userPicturePath} size="55px" />
-        <div>
+        <div className='post-desc'>
             <h3>{name}</h3>
             <span>{subtitle}</span>
       </div>
