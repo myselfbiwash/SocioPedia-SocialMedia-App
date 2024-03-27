@@ -30,10 +30,13 @@ const authSlice = createSlice({
           console.error("user friends non-existent :(");
         }
       },
+      setFriendStatus: (state, action) => {
+        state.isFriend = action.payload;
+      },
     // add other reducers like logout here
   },
 });
 
-export const { login,logout,setPosts,setFriends, setPost } = authSlice.actions;
+export const { login,logout,setPosts,setFriends, setPost, setFriendStatus } = authSlice.actions;
 
 export default authSlice.reducer;
