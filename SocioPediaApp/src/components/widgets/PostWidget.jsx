@@ -16,6 +16,8 @@ const PostWidget = ({
   likes,
   comments,
 }) => {
+  const [comment, setComment] = useState('');
+
   const [isComments, setIsComments] = useState(false);
   const dispatch = useDispatch();
   const token = useSelector((state) => state.auth.token);
@@ -50,6 +52,7 @@ const PostWidget = ({
     const updatedPost = await response.json();
     console.log("Updated Post:",updatedPost);
     dispatch(setPost({ post: updatedPost }));
+    setComment('');
   };
 
   return (
@@ -112,8 +115,9 @@ const PostWidget = ({
           </div>
           <hr />
           {isComments && <form className="comment-form" onSubmit={handleComment}>
-            <input type="text" placeholder="Add a comment" />
-            <button type="submit">Post Comment</button>
+            <input type="text" placeholder="Add a comment" value={comment}
+      onChange={(e) => setComment(e.target.value)}/>
+            <button  type="submit">Post Comment</button>
             </form>}
           {isComments && comments.map((comment,i) => (
                   <div key={`${name}-${i}`} className="cmt">
