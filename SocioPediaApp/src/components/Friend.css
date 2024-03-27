@@ -15,3 +15,23 @@
     font-size: 12px;
     color: gray;
 }
+
+.add-remove{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin:0;
+    /* gap: 10px; */
+}
+
+.add-remove button{
+    /* background-color: #4CAF50; */
+    color: white;
+    padding: 10px 15px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 330px;
+    margin-bottom: 10px;
+}
