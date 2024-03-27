@@ -218,3 +218,32 @@
     border: 2px solid #F6F6F6;
     border-radius: 10px;
 }
+
+
+
+.post-widget-bottom {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap:15px;
+}
+
+.like{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap:5px;
+}
+.comment{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap:5px;
+}
+
+.cmt{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    color: gray;
+}
+
