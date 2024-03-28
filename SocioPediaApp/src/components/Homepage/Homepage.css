@@ -9,3 +9,10 @@
     gap: 20px;
     width: 700px;
 }
+
+.user-friends{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 300px;
+}

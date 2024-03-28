@@ -24,8 +24,7 @@
     /* gap: 10px; */
 }
 
-.add-remove button{
-    /* background-color: #4CAF50; */
+/* .add-remove button{
     color: white;
     padding: 10px 15px;
     margin: 8px 0;
@@ -34,4 +33,26 @@
     border-radius: 5px;
     margin-left: 330px;
     margin-bottom: 10px;
+} */
+
+.post-list{
+    /* color: white; */
+    padding: 10px 15px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 330px;
+    margin-bottom: 10px;
+}
+
+.friend-list{
+    /* color: white; */
+    padding: 10px 15px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 30px;
+    margin-bottom: 10px;    
 }
