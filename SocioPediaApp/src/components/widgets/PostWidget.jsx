@@ -62,6 +62,7 @@ const PostWidget = ({
         name={name}
         subtitle={location}
         userPicturePath={userPicturePath}
+        isFriendList={false}
       />
       <div className="post-widget-middle">
         <p>{description}</p>
