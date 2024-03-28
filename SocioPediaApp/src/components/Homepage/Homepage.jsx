@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux'
 import MyPostWidget from '../widgets/MyPostWidget';
 import './Homepage.css'
 import PostsWidget from '../widgets/PostsWidget';
+import FriendListWidget from '../widgets/FriendListWidget';
 
 const Homepage = () => {
   const user = useSelector((state) => state.auth.user);
@@ -27,6 +28,9 @@ const Homepage = () => {
       <section className='user-posts'>
         <MyPostWidget picturePath={picturePath}/>
         <PostsWidget userId={_id} isProfile={false}/>
+      </section>
+      <section className='user-friends'>
+        { <FriendListWidget userId={_id}/> }
       </section>
     
     </div>
