@@ -6,7 +6,7 @@ import UserImage from "./UserImage";
 import "./Friend.css";
 import { setFriendStatus } from "./state/reducer";
 
-const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
+const Friend = ({ friendId, name, subtitle, userPicturePath, isFriendList=false }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { _id } = useSelector((state) => state.auth.user);
@@ -43,13 +43,13 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
     <div>
       <div className="post-friend">
         <UserImage image={userPicturePath} size="55px" />
-        <div className="post-desc">
+        <div className="post-desc" onClick={() => navigate(`/profile/${friendId}`)}>
           <h3>{name}</h3>
           <span>{subtitle}</span>
         </div>
       <div className="add-remove">
         {isFriend ? (
-          <button onClick={patchFriend}>
+          <button onClick={patchFriend} className={isFriendList ? 'friend-list' : 'post-list '}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               height="24"
@@ -60,7 +60,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
             </svg>
           </button>
         ) : (
-          <button onClick={patchFriend}>
+          <button onClick={patchFriend} className={isFriendList ? 'friend-list' : 'post-list '}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               height="24"
