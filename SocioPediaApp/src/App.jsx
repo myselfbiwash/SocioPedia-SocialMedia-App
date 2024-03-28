@@ -7,6 +7,7 @@ import Login from './components/Login'
 import Homepage from './components/Homepage/Homepage'
 import PrivateComponent from './components/PrivateComponent'
 import Navbar from './components/Navbar'
+import ProfilePage from './components/ProfilePage/ProfilePage'
 
 function App() {
 
@@ -19,6 +20,8 @@ function App() {
         <Routes>
         <Route path="/" element={<PrivateComponent />}>
           <Route path="/" element={<Homepage />} />
+          <Route path="/profile/:userId" element={<ProfilePage />} />
+
           </Route>
           <Route path="/login" element={<Login/>} />
           <Route path="/signup" element={<SignUp/>} />
